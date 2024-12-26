@@ -1,0 +1,27 @@
+{
+  "name": "canonical-callflow-chart",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^16.18.122",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "@canonical/voice": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }
+}
