@@ -12,6 +12,43 @@ npm run dev
 
 Open the browser and navigate to `http://localhost:3000`.
 
+### Component Usage
+
+```tsx
+import { CallFlowChart, CanonicalProviders } from "@canonicalai/voice";
+
+function App() {
+  return (
+    <CanonicalProviders apiKey={apiKey}>
+      <CallFlowChart />
+    </CanonicalProviders>
+  );
+}
+```
+
+### Styling the Component
+
+This component has a default style that can be overridden using CSS variables. The CSS variables are defined in `CallFlowStyles.ts` and described in detail below. The recommended way to override the styles is to use the `className` prop on the component and set the CSS variables in the class. Here's an example of how to do this:
+
+```css
+.canonical-callflow-chart {
+  --callflow-background-color: #f0f0f0;
+}
+```
+
+```tsx
+import { CallFlowChart, CanonicalProviders } from "@canonicalai/voice";
+import "./component-styles.css";
+
+function App() {
+  return (
+    <CanonicalProviders apiKey={apiKey}>
+      <CallFlowChart className="canonical-callflow-chart" />
+    </CanonicalProviders>
+  );
+}
+```
+
 ## Call Flow Chart Style Guide
 
 This document provides a detailed description of the CSS variables defined in `CallFlowStyles.ts`, outlining their purpose and the specific styling they control in the Call Flow visualization.
