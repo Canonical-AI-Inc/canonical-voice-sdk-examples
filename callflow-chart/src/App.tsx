@@ -1,9 +1,15 @@
-import { CallFlow, CallFlowMargin, CanonicalProviders } from "@canonical/voice";
+/// <reference types="vite/client" />
+
+import {
+  CallFlow,
+  CallFlowMargin,
+  CanonicalProviders,
+} from "@canonicalai/voice";
 import { useState } from "react";
 
 import "./App.css";
 
-const apiKey = process.env.REACT_APP_CANONICAL_API_KEY ?? "";
+const apiKey = import.meta.env.VITE_CANONICAL_API_KEY ?? "";
 
 function App() {
   const [startDate, setStartDate] = useState<string>("");
@@ -11,59 +17,23 @@ function App() {
 
   return (
     <CanonicalProviders apiKey={apiKey}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateRows: "1fr auto 1fr",
-          minHeight: "100vh",
-          width: "100%",
-          backgroundColor: "#f0f0f0",
-        }}
-      >
-        <div style={{ width: "100%", backgroundColor: "#f0f0f0" }} />{" "}
-        {/* Top row */}
-        <div
-          style={{
-            width: "100%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "1rem",
-              marginBottom: "1rem",
-            }}
-          >
+      <div className="app-container">
+        <div className="spacer" /> {/* Top row */}
+        <div className="date-picker-container">
+          <div className="date-picker-controls">
             <input
               type="date"
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
               aria-label="Start date"
-              style={{
-                padding: "8px 12px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                fontSize: "14px",
-                backgroundColor: "white",
-                cursor: "pointer",
-                outline: "none",
-              }}
+              className="date-input"
             />
             <input
               type="date"
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               aria-label="End date"
-              style={{
-                padding: "8px 12px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                fontSize: "14px",
-                backgroundColor: "white",
-                cursor: "pointer",
-                outline: "none",
-              }}
+              className="date-input"
             />
           </div>
 
@@ -80,8 +50,7 @@ function App() {
             animateAppear={true}
           />
         </div>
-        <div style={{ width: "100%", backgroundColor: "#f0f0f0" }} />{" "}
-        {/* Bottom row */}
+        <div className="spacer" /> {/* Bottom row */}
       </div>
     </CanonicalProviders>
   );
