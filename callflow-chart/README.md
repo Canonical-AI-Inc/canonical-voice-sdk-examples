@@ -12,7 +12,11 @@ npm run dev
 
 Open the browser and navigate to `http://localhost:3000`.
 
-### Component Usage
+## CallFlow Component Documentation
+
+### Usage
+
+There are two required pieces of information to use this component, the `apiKey` and the `assistantId`. The `apiKey` is your Canonical API key and can be found in the [Canonical Dashboard](https://voice.canonical.chat/home/settings). The `assistantId` is the ID of the assistant you want to visualize the call flow for. If you're using the Canonical API to send calls, the `assistantId` is the value of the `assistant.id` field in the call request. The component's other properties are defined below.
 
 ```tsx
 import { CallFlowChart, CanonicalProviders } from "@canonicalai/voice";
@@ -20,11 +24,35 @@ import { CallFlowChart, CanonicalProviders } from "@canonicalai/voice";
 function App() {
   return (
     <CanonicalProviders apiKey={apiKey}>
-      <CallFlowChart />
+      <CallFlowChart
+        assistantId="YOUR_ASSISTANT_ID"
+        width={1000}
+        height={400}
+      />
     </CanonicalProviders>
   );
 }
 ```
+
+### Props
+
+The `CallFlow` component accepts the following props:
+
+| Prop Name       | Type                                   | Default                 | Required | Description                                                                               |
+| --------------- | -------------------------------------- | ----------------------- | -------- | ----------------------------------------------------------------------------------------- |
+| `width`         | `number`                               | `800`                   | No       | Specifies the width of the chart in pixels.                                               |
+| `height`        | `number`                               | `600`                   | No       | Specifies the height of the chart in pixels.                                              |
+| `className`     | `string`                               | `null`                  | No       | Adds a custom CSS class to the root container for additional styling.                     |
+| `assistantId`   | `string`                               | -                       | Yes      | Identifier for the assistant whose call flow data is to be visualized.                    |
+| `startDate`     | `string` (ISO 8601 format, YYYY-MM-DD) | `null`                  | No       | Start date for filtering call data.                                                       |
+| `endDate`       | `string` (ISO 8601 format, YYYY-MM-DD) | `null`                  | No       | End date for filtering call data.                                                         |
+| `colors`        | `string[]`                             | `null`                  | No       | Array of color codes used for chart elements. If not provided, a default palette is used. |
+| `marginLeft`    | `number`                               | `CallFlowMargin.Left`   | No       | Left margin of the chart in pixels.                                                       |
+| `marginRight`   | `number`                               | `CallFlowMargin.Right`  | No       | Right margin of the chart in pixels.                                                      |
+| `marginTop`     | `number`                               | `CallFlowMargin.Top`    | No       | Top margin of the chart in pixels.                                                        |
+| `marginBottom`  | `number`                               | `CallFlowMargin.Bottom` | No       | Bottom margin of the chart in pixels.                                                     |
+| `showSkeleton`  | `boolean`                              | `true`                  | No       | Whether to show a loading skeleton while data is being fetched.                           |
+| `animateAppear` | `boolean`                              | `true`                  | No       | Whether to animate the appearance of the chart when it loads.                             |
 
 ### Styling the Component
 
