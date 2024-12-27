@@ -1,46 +1,179 @@
-# Getting Started with Create React App
+## Call Flow Chart (Sankey Chart)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Use this example to see how to use the Canonical Voice SDK to create a call flow chart.
+To run the example, clone the repository and run
 
-## Available Scripts
+```bash
+cp .env.example .env
+# edit the .env file with your Canonical API key
+npm install
+npm run dev
+```
 
-In the project directory, you can run:
+Open the browser and navigate to `http://localhost:3000`.
 
-### `npm start`
+## Call Flow Chart Style Guide
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This document provides a detailed description of the CSS variables defined in `CallFlowStyles.ts`, outlining their purpose and the specific styling they control in the Call Flow visualization.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### CSS Variables and Their Roles
 
-### `npm test`
+#### General Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `--callflow-background-color`
 
-### `npm run build`
+  - **Purpose**: Sets the background color for the Call Flow visualization container.
+  - **Usage**: Applied to the overall container to ensure consistent visual background.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `--callflow-font-family`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - **Purpose**: Defines the font family used across the visualization.
+  - **Usage**: Applied to text elements for consistency in typography.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Node Styles
 
-### `npm run eject`
+- `--callflow-node-lowlight`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  - **Purpose**: Color for nodes that are not highlighted.
+  - **Usage**: Ensures non-focused nodes fade into the background.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `--callflow-node-lowlight-opacity`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - **Purpose**: Opacity for nodes that are not highlighted.
+  - **Usage**: Adds visual hierarchy by dimming inactive nodes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- `--callflow-node-highlight-opacity`
 
-## Learn More
+  - **Purpose**: Opacity for nodes that are highlighted.
+  - **Usage**: Ensures the focused nodes stand out.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `--callflow-node-label-color`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - **Purpose**: Color for the node labels.
+  - **Usage**: Improves label readability for active nodes.
+
+- `--callflow-node-label-lowlight-color`
+
+  - **Purpose**: Color for the labels of non-highlighted nodes.
+  - **Usage**: Reduces the visual prominence of inactive node labels.
+
+- `--callflow-node-label-font-size`
+
+  - **Purpose**: Font size for the node labels.
+  - **Usage**: Ensures labels are appropriately sized for readability.
+
+- `--callflow-node-label-font-weight`
+
+  - **Purpose**: Font weight for the node labels.
+  - **Usage**: Controls the visual weight of the labels for emphasis.
+
+#### Link Styles
+
+- `--callflow-link-lowlight`
+
+  - **Purpose**: Color for links that are not highlighted.
+  - **Usage**: Keeps inactive links visually subdued.
+
+- `--callflow-link-lowlight-opacity`
+
+  - **Purpose**: Opacity for non-highlighted links.
+  - **Usage**: Enhances focus on active links by reducing prominence of inactive ones.
+
+- `--callflow-link-highlight-opacity`
+
+  - **Purpose**: Opacity for highlighted links.
+  - **Usage**: Makes active links more prominent in the visualization.
+
+#### Tooltip Styles
+
+- `--callflow-tooltip-background-color`
+
+  - **Purpose**: Background color of the tooltip.
+  - **Usage**: Provides a clear contrast for tooltip readability.
+
+- `--callflow-tooltip-border-radius`
+
+  - **Purpose**: Controls the border radius of the tooltip.
+  - **Usage**: Enhances the visual style with rounded corners.
+
+- `--callflow-tooltip-padding`
+
+  - **Purpose**: Padding inside the tooltip container.
+  - **Usage**: Ensures content is visually balanced within the tooltip.
+
+- `--callflow-tooltip-opacity`
+
+  - **Purpose**: Controls the opacity of tooltips.
+  - **Usage**: Defines the visibility of tooltips during hover.
+
+- `--callflow-tooltip-transition`
+
+  - **Purpose**: Specifies the transition effects for tooltips.
+  - **Usage**: Adds smooth appearance and disappearance animations.
+
+- `--callflow-tooltip-header-color`
+
+  - **Purpose**: Sets the color of the tooltip header text.
+  - **Usage**: Highlights the tooltip's title.
+
+- `--callflow-tooltip-header-font-size`
+
+  - **Purpose**: Font size for the tooltip header.
+  - **Usage**: Ensures title prominence within the tooltip.
+
+- `--callflow-tooltip-header-font-weight`
+
+  - **Purpose**: Font weight for the tooltip header.
+  - **Usage**: Enhances the emphasis on the title.
+
+- `--callflow-tooltip-body-color`
+
+  - **Purpose**: Sets the text color for the tooltip body.
+  - **Usage**: Maintains readability of the main tooltip content.
+
+- `--callflow-tooltip-body-font-size`
+
+  - **Purpose**: Font size for the tooltip body text.
+  - **Usage**: Ensures tooltip content is legible.
+
+- `--callflow-tooltip-body-font-weight`
+
+  - **Purpose**: Font weight for the tooltip body text.
+  - **Usage**: Enhances content readability and structure.
+
+- `--callflow-tooltip-ul-gap`
+
+  - **Purpose**: Gap between items in the unordered list inside the tooltip.
+  - **Usage**: Improves the spacing and layout of list items.
+
+- `--callflow-tooltip-ul-list-style`
+
+  - **Purpose**: Defines the list style of tooltip unordered lists.
+  - **Usage**: Allows customization of list item markers.
+
+- `--callflow-tooltip-hr-color`
+
+  - **Purpose**: Color of the horizontal rule in tooltips.
+  - **Usage**: Provides a visual separator between sections.
+
+#### Skeleton Loader Styles
+
+- `--callflow-skeleton-opacity`
+
+  - **Purpose**: Sets the opacity of the skeleton loader.
+  - **Usage**: Controls the visibility of the loader during data loading.
+
+- `--callflow-skeleton-font-size`
+
+  - **Purpose**: Font size of the skeleton loader message.
+  - **Usage**: Ensures the message is readable.
+
+- `--callflow-skeleton-transition`
+
+  - **Purpose**: Specifies the transition effect for the skeleton loader.
+  - **Usage**: Provides a smooth transition when the loader appears or disappears.
+
+- `--callflow-skeleton-transition-delay`
+
+  - **Purpose**: Delays the transition effect for the skeleton loader.
+  - **Usage**: Ensures a graceful transition timing.
