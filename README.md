@@ -33,14 +33,15 @@ Each subdirectory also contains a README that:
 
 ```tsx
 import { CANONICAL_COMPONENT, CanonicalProviders } from "@canonicalai/voice";
-const apiKey = // read the API key from the .env file or something
-  function App() {
-    return (
-      <CanonicalProviders apiKey={apiKey}>
-        <CANONICAL_COMPONENT />
-      </CanonicalProviders>
-    );
-  };
+
+const apiKey = ; // read the API key from the .env file or something
+function App() {
+  return (
+    <CanonicalProviders apiKey={apiKey}>
+      <CANONICAL_COMPONENT />
+    </CanonicalProviders>
+  );
+};
 ```
 
 To use a component, wrap it in the `CanonicalProviders` component and pass your API key. This ensures the component can access the API key and interact with the Canonical API.

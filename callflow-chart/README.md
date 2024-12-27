@@ -21,6 +21,7 @@ There are two required pieces of information to use this component, the `apiKey`
 ```tsx
 import { CallFlowChart, CanonicalProviders } from "@canonicalai/voice";
 
+const apiKey = ; // read the API key from the .env file or something
 function App() {
   return (
     <CanonicalProviders apiKey={apiKey}>
@@ -31,7 +32,7 @@ function App() {
       />
     </CanonicalProviders>
   );
-}
+};
 ```
 
 ### Props
