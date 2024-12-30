@@ -15,7 +15,7 @@ npm install @canonicalai/voice
 Each subdirectory in this repository represents a specific component and includes a runnable example. To get started:
 
 ```bash
-https://github.com/Canonical-AI-Inc/canonical-voice-sdk-examples.git
+git clone https://github.com/Canonical-AI-Inc/canonical-voice-sdk-examples.git
 cd canonical-voice-sdk-examples/<EXAMPLE_NAME>
 cp .env-example .env
 # Edit the .env file to include your Canonical API key
@@ -77,7 +77,7 @@ The Call Flow Chart example demonstrates how to use the Canonical Voice SDK to c
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/canonicalai/canonical-voice-sdk-examples.git
+   git clone https://github.com/Canonical-AI-Inc/canonical-voice-sdk-examples.git
    ```
 2. Navigate to the example directory and follow the setup steps outlined in the README file.
 
