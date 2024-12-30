@@ -39,7 +39,7 @@ function App() {
 
           <CallFlow
             className="canonical-callflow"
-            assistantId="iFrame UploadTest"
+            assistantId="YOUR_ASSISTANT_ID_HERE"
             marginLeft={CallFlowMargin.Left}
             marginRight={CallFlowMargin.Right}
             startDate={startDate && endDate ? startDate : undefined}
