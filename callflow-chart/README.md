@@ -4,9 +4,16 @@ Use this example to see how to use the Canonical Voice SDK to create a call flow
 To run the example, clone the repository and run
 
 ```bash
+# set up demo
 cp .env.example .env
 # edit the .env file with your Canonical API key
 npm install
+
+# input your assistant Id
+open src/App.tsx
+# edit assistantId="YOUR_ASSISTANT_ID_HERE" with your assistant Id. 
+
+# run demo
 npm run dev
 ```
 
