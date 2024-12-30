@@ -17,7 +17,7 @@ Each subdirectory in this repository represents a specific component and include
 ```bash
 https://github.com/Canonical-AI-Inc/canonical-voice-sdk-examples.git
 cd canonical-voice-sdk-examples/<EXAMPLE_NAME>
-cp .env.example .env
+cp .env-example .env
 # Edit the .env file to include your Canonical API key
 npm install
 npm run dev
