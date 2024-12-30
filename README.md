@@ -15,7 +15,7 @@ npm install @canonicalai/voice
 Each subdirectory in this repository represents a specific component and includes a runnable example. To get started:
 
 ```bash
-git clone https://github.com/canonicalai/canonical-voice-sdk-examples.git
+https://github.com/Canonical-AI-Inc/canonical-voice-sdk-examples.git
 cd canonical-voice-sdk-examples/<EXAMPLE_NAME>
 cp .env.example .env
 # Edit the .env file to include your Canonical API key
